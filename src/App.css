@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #111;
+}
+.loader__container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.preloader__text{
+  color: blue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 5rem;
+  box-shadow: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+/* user card */
+
+.user__card{
+  
+  height: 500px;
+  width: 800px;
+  background-color: antiquewhite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user__headline{
+  height: 100px;
+  width: 50%;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+}
+.user__headline h1{
+  font-weight: 800;
+}
+
+.search__input{
+  margin: 1rem;
+  height: 40px;
+  width: 60%;
+  
+}
+.simple__user{
+  margin: 1rem;
+  font-family: sans-serif;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  height: 100px;
+  background-color: #00274F;
+  box-shadow: 0 0 10px;
+  width: 350px;
+  cursor: pointer;
+  border-radius: 20px;
+  
+  
+}
+
+.simple__user:hover{
+ background-color: green;
+ transition: 0.7s ease-in-out;
 }
