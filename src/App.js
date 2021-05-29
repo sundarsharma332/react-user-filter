@@ -3,14 +3,12 @@ import { Card } from 'react-bootstrap';
 import $ from 'jquery';
 import './App.css';
 function App() {
-  //const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState(null);
 
   useEffect(async () => {
     const response = await fetch("https://reqres.in/api/users?delay=3");
     const info = await response.json();
-    console.clear();
     setDetails(info.data);
     setLoading(false);
   }, []);
@@ -18,7 +16,7 @@ function App() {
   $(document).ready(function(){
     $("#myInput").on("keyup", function() {
       var value = $(this).val().toLowerCase();
-      $("#userinfo__id .p").filter(function() {
+      $("#userinfo__id p").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
     });
@@ -43,7 +41,7 @@ function App() {
             {details.map((user) => (
               <div className ="simple__user" id = "userinfo__id">
                 <p>First Name: {user.first_name}</p>
-                </div>
+              </div>
             ))};
           </div>
         </div>
